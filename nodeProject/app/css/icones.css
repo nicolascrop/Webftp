@@ -1,0 +1,30 @@
+.btn-toolbar{
+	background-color: transparent;
+	border: 1px solid #3d3e3c;
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: -15px 2px;
+}
+
+.btn-liste{
+	background-image: url(../img/liste.png);
+}
+
+.btn-active{
+	background-position: 2px 2px;
+}
+
+
+.btn-sideBar{
+	background: transparent;
+	border: 1px solid #555651;
+	width: 20px;
+	height: 20px;
+}
+
+.anchor{
+	background:  url(../img/ancre.png) 50% 50% no-repeat;
+	background-size: 18px 18px;
+}

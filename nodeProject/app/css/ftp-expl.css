@@ -1,0 +1,184 @@
+
+#preview-content{
+	position: absolute;
+	top: 10px;
+	bottom: 60px;
+	left: 700px;
+	right: 20px;
+	display: inline-block;
+	border-radius: 0px 0px 2px 2px;
+	box-shadow: 0 0 10px black;
+}
+#editor, #preview-none{
+	height:100%;
+	width:100%;
+}
+#ftp-window{
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	bottom: 60px;
+	width: 650px;
+	display:inline-block;
+	background-color: #3d3e3c;
+	border-radius: 0px 0px 2px 2px;
+	box-shadow: 0 0 10px black;
+	max-height:100%;
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+.ftp-content{
+	display: table;
+	border-collapse:collapse;
+	color:#232323;
+	font-size:0.9em;
+	background-color: #fefefe;
+	width:650px;
+	height:100%;
+	margin:0px;
+	margin:auto;
+	min-width:600px;
+	overflow: hidden;
+}
+.ftp-content tbody{
+	display: block;
+	height: 100%;
+	width:650px;
+	overflow-y: scroll;
+	border-top:1px solid #111;
+}
+.ftp-content tbody tr{
+	display:table-row;
+	max-height:25px;
+	line-height: 25px;
+}
+.ftp-content tr{
+	cursor: pointer;
+}
+.ftp-content td{
+	display: table-cell;
+}
+.title{
+	display:block;
+	height:27px;
+	line-height: 27px;
+	border-top:none;
+	color: #fefefe;
+	background-color: #3d3e3c;
+	font-weight: 550;
+	border-bottom: 1px solid #383938;
+}
+.title .col:hover{
+	background-color: #222;
+}
+.title .col:active{
+	background-color: #111;
+}
+.selected{color: #7af;}
+.ftp-content tbody tr{border-bottom:1px solid rgb(200, 200, 200);}
+.ftp-content tbody .error{
+	border-bottom: none;
+}
+.ftp-content tbody tr:hover{background-color: #ddd;}
+.ftp-content td{padding-left:10px;}
+.ftp-content tbody .ftp-name{
+	width:200px;
+	font-size:1em;
+	padding-left: 20px;
+	position: relative;
+}
+.ftp-ico{
+	position: absolute;
+	display:block;
+	width: 16px;
+	height: 16px;
+	top:5px;
+	left: 2px;
+}
+.ftp-content tbody .ftp-date{width:200px;font-size:0.9em;}
+.ftp-content tbody .ftp-size{width:100px;font-size:0.9em}
+.ftp-content tbody .ftp-rights{width:100px;font-size:0.9em}
+.ftp-content tbody .ftp-owner{width:50px;font-size:0.9em; font-weight: bold}
+
+.ftp-content thead .ftp-name{
+	width:200px;
+	padding-left: 20px;
+}
+.ftp-content thead .ftp-date{width:200px;}
+.ftp-content thead .ftp-size{width:100px;}
+.ftp-content thead .ftp-rights{width:100px;}
+.ftp-content thead .ftp-owner{width:50px;}
+
+.ftp-title{
+	position: absolute;
+	z-index:3;
+	width:200px;
+	height: 85%;
+	min-height: 85%;
+	overflow-x: hidden;
+	top: 8%;
+	left:0%;
+	background-color: #3d3e3c;
+	margin:0px;
+	padding: 0px;
+	border-top: 1px solid #383938;
+	border-bottom: 1px solid #383938;
+	box-shadow: 2px 2px 6px black;
+	border-radius: 0px 2px 2px 0px;
+	display:none;
+}
+.title-close{
+	position: absolute;
+	top:3px;
+	color:#fefefe;
+	right: 6px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	vertical-align: middle;
+	line-height: 20px;
+	zoom: 1;
+	-webkit-appearance: none;
+	font-size: 17px;
+}
+.title-close:hover{
+	color:grey;
+}
+.ftp-title li{
+	cursor: pointer;
+	width: 197px;
+	position: relative;
+	height:40px;
+	border-bottom: 1px solid #383938;
+	border-right: 3px solid #3d3e3c;
+}
+.ftp-title li:hover{
+	background-color: #222;
+}
+.ftp-title li:active{
+	background-color: #111;	
+}
+
+.ftp-title .title-ftp, .ftp-title .title-path{
+	display:block;
+	width: 100%;
+	height:20px;
+	line-height: 20px;
+	font-size: 0.9em;
+	margin-left: 0px;
+	padding-left: 8px;
+}
+.ftp-title .active{
+	border-left: 3px solid #7af;
+}
+.ftp-title .active:hover{
+	border-left: 3px solid #69e;
+}
+.ftp-title .title-path{
+	font-weight: bold;
+	font-size: 0.8em;
+}

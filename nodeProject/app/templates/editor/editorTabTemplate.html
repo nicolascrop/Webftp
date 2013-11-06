@@ -1,0 +1,4 @@
+<%_.each(model.tab, function(t){%>
+	<li class="tab <%if(t.active){%><%= "active"%><%}%>" data-id="<%= t.id %>" style="width: <%= model.width%>px"><span class="tab-title" style="width: <%= model.tWidth%>px; max-width: <%= model.tWidth%>px;"><%=t.title%></span><button class="tab-close">&times;</button></li>
+<%});%>
+<li id="new-tab">+</li>

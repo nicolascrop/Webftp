@@ -1,0 +1,63 @@
+<div id="ftp-window">
+	<ul class="ftp-title" <%if (options.toolbar.liste) {%><%= "style='display:block'"%><%}%>>
+	<% _.each(collection.models, function(m){%>
+		<li data-id="<%= m.id %>" <% if(m.active){%> class="active" <%}%> ><span class="title-ftp"><%= m.host%>@<%= m.login%><button class="title-close">&times;</button></span><span class="title-path">Path: <%= m.path%></span></li>
+	<% });%>
+	</ul>
+	<table class="ftp-content">
+		<thead>
+			<tr class="title">
+				<td class="col ftp-name <% if(collection.getActive() !== undefined && collection.getActive().order == "name"){ %>selected<% } %>">Nom</td>
+				<td class="separator" data-target="ftp-name"></td>
+				<td class="col ftp-date <% if(collection.getActive() !== undefined && collection.getActive().order == "date"){ %>selected<% } %>">Date</td>
+				<td class="separator" data-target="ftp-date"></td>
+				<td class="col ftp-size <% if(collection.getActive() !== undefined && collection.getActive().order == "size"){ %>selected<% } %>">Size</td>
+				<td class="separator" data-target="ftp-size"></td>
+				<td class="col ftp-rights">Rights</td>
+				<td class="separator" data-target="ftp-rights"></td>
+				<td class="col ftp-owner <% if(collection.getActive() !== undefined && collection.getActive().order == "owner"){ %>selected<% } %>">Owner</td>
+			</tr>
+		</thead>
+		<tbody>
+		<% if (collection.getActive() !== undefined){%>	
+			<%if(collection.getActive().error == 0){%>
+				<%if(collection.getActive().path != "/"){%>
+				<tr data-type="folder">
+					<td class="ftp-name">
+						<span class="ftp-ico icon-directory"></span>
+						..</td>
+					<td></td>
+					<td class="ftp-date"></td>
+					<td></td>
+					<td class="ftp-size"></td>
+					<td></td>
+					<td class="ftp-rights"></td>
+					<td></td>
+					<td class="ftp-owner"></td>
+				</tr>
+				<%}%>
+				<%_.each(collection.getActive().filesAndFolders, function(ff){%>
+				<tr data-type="<%= ff.typeToPrint%>">
+					<td class="ftp-name">
+						<span class="ftp-ico <%= ff.ico%>"></span>
+						<%= ff.name%></td>
+					<td></td>
+					<td class="ftp-date"><%= ff.dateToPrint%></td>
+					<td></td>
+					<td class="ftp-size"><%= ff.size%></td>
+					<td></td>
+					<td class="ftp-rights"><%= ff.rightsToPrint %></td>
+					<td></td>
+					<td class="ftp-owner"><%= ff.owner%></td>
+				</tr>
+				<% });
+			}
+			else{%><tr class="error">
+						<td><%= collection.getActive().errorTxt%></td>
+					</tr><%}%>
+		<%}%>
+		</tbody>
+	</table>
+</div>
+<div id='preview-content'>
+</div>

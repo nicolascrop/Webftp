@@ -1,0 +1,17 @@
+<ul class="menu">
+	<li class="anchor btn-sidebar"></li>
+</ul>
+<ul class="liste">
+	<%if (anchor === undefined){%>
+		<% if (collection.getActive() !== undefined){%>
+			<%if(collection.getActive().error == 0){%>
+				<%if(collection.getActive().path != "/"){%>
+					<li data-type="folder"><span class="ed-ico icon-directory"></span>..</li>
+				<%}%>
+				<%_.each(collection.getActive().filesAndFolders, function(ff){%>
+					<li data-type="<%= ff.typeToPrint%>"><span class="ed-ico <%=ff.ico%>"></span><%= ff.name %></li>
+				<%});%>
+			<%}%>
+		<%}%>
+	<%}%>
+</ul>
